@@ -41,7 +41,7 @@
                 <p style="text-align: center;font-size: 35px;color: rgb(0,0,0);">Login</p>
             </div>
             <div class="mb-3"></div>
-            <div class="mb-3"><input class="form-control" type="email" name="email" placeholder="Email" value="admin@gmail.com"></div>
+            <div class="mb-3"><input class="form-control" type="email" name="email" placeholder="Email" value="admis@gmail.com"></div>
             <div><span class="text-danger">@error('email'){{$message}}@enderror</span></div>
             <div class="mb-3"><input class="form-control" type="password" name="password" placeholder="Password" value="123456"></div>
             <div><span class="text-danger">@error('password'){{$message}}@enderror</span></div>
