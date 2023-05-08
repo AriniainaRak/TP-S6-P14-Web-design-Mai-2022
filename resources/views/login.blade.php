@@ -1,102 +1,66 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="fr">
 
 <head>
-
-    <!-- Basic Page Needs
-    ================================================== -->
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-    <title>Informations sur l'IA</title>
-
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <meta name="keywords" content="">
-
-    <!-- Mobile Specific Metas
-    ================================================== -->
-    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,600,700" rel="stylesheet">
-    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
-
-    <!-- Favicon
-    ================================================== -->
-    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('assets/img/apple-touch-icon.png') }}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/img/favicon.png') }}">
-
-    <!-- Stylesheets
-    ================================================== -->
-    <!-- Bootstrap core CSS -->
-    <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
-    <link href="{{ asset('assets/css/responsive.css') }}" rel="stylesheet">
-
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Login</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/fonts/ionicons.min.css">
+    <link rel="stylesheet" href="assets/css/Contact-Form-Clean.css">
+    <link rel="stylesheet" href="assets/css/Footer-Basic.css">
+    <link rel="stylesheet" href="assets/css/Login-Form-Clean.css">
 </head>
 
 <body>
-    
-
-
-
-    <!-- CONTENU -->
-    <main id="main" class="site-main">
-
-        <section class="site-section subpage-site-section section-blog">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-8">
-                    <p><a href="/frontOffice">Go to Front office</a></p>
-                        <div class="respond">
-                            <h3>Login</h3>
-                            @if(session('failed'))
-                            <div class="alert alert-danger" role="alert">
-                                <button type="button" class="close" data-dismiss="alert">×</button>
-                                {{ session('failed') }}
-                            </div>
-                            @endif
-                            <form class="form-horizontal" action="/login" method="get">
-                                <input class="form-control" type="text" name="nom" value="admin" required>
-                                <input class="form-control" type="password" name="motdepasse" value="123456" required>
-                                <button class="btn btn-green">Login</button>
-                            </form>
-                        </div><!-- /.respond -->
-                    </div>
-                </div>
+    <nav class="navbar navbar-light navbar-expand-lg fixed-top" id="mainNav">
+        <div class="container"><a class="navbar-brand" href="liste.html">Ai News</a><button data-bs-toggle="collapse" data-bs-target="#navbarResponsive" class="navbar-toggler" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto"></ul>
             </div>
-        </section><!-- /.section-portfolio -->
-
-    </main><!-- /#main -->
-    <!-- CONTENU -->
-
-
-
-   
-
-
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
-    <script src="{{ asset('assets/js/bootstrap-select.min.js') }}"></script>
-    <script src="{{ asset('assets/js/jquery.slicknav.min.js') }}"></script>
-    <script src="{{ asset('assets/js/jquery.countTo.min.js') }}"></script>
-    <script src="{{ asset('assets/js/jquery.shuffle.min.js') }}"></script>
-    <script src="{{ asset('assets/js/script.js') }}"></script>
-
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="{{route('accueil')}}">Accueil</a></li>
+            </ul>
+        </div>
+    </nav>
+    <section class="login-clean" style="background: url(&quot;assets/img/about-bg.jpg&quot;);">
+        <form method="post" action="{{ route('logAdmin')}}">
+            @csrf
+            @if (Session::has('success'))
+            <div class="alert alert-success">{{Session::get('success')}}</div>
+            @endif
+            @if (Session::has('fail'))
+                <div class="alert alert-danger">{{Session::get('fail')}}</div>
+            @endif
+            <h2 class="visually-hidden">Login Form</h2>
+            <div class="illustration">
+                <p style="text-align: center;font-size: 35px;color: rgb(0,0,0);">Login</p>
+            </div>
+            <div class="mb-3"></div>
+            <div class="mb-3"><input class="form-control" type="email" name="email" placeholder="Email" value="test@gmail.com"></div>
+            <div><span class="text-danger">@error('email'){{$message}}@enderror</span></div>
+            <div class="mb-3"><input class="form-control" type="password" name="password" placeholder="Password" value="123456789"></div>
+            <div><span class="text-danger">@error('password'){{$message}}@enderror</span></div>
+            <div class="mb-3"><button class="btn btn-primary d-block w-100" type="submit" style="background: rgb(0,0,0);">login</button></div><a class="forgot" href="registration">Not registered?</a>
+        </form>
+    </section>
+    <footer class="footer-basic">
+        <div class="social"><a href="#"><i class="icon ion-social-instagram"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-facebook"></i></a></div>
+        <ul class="list-inline">
+            <li class="list-inline-item"><a href="#">Home</a></li>
+            <li class="list-inline-item"><a href="#">Services</a></li>
+            <li class="list-inline-item"><a href="#">About</a></li>
+            <li class="list-inline-item"><a href="#">Terms</a></li>
+            <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
+        </ul>
+        <p class="copyright">Company Name © 2023</p>
+    </footer>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/clean-blog.js"></script>
 </body>
 
 </html>

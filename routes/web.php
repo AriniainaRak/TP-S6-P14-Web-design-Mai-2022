@@ -1,47 +1,30 @@
 <?php
 
-use App\Http\Controllers\InfoController;
-use App\Http\Controllers\LoginController;
-use App\Http\Controllers\FOInfoController;
-use App\Http\Controllers\FOLoginController;
+use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
 |
 | Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
+| routes are loaded by the RouteServiceProvider and all of them will
+| be assigned to the "web" middleware group. Make something great!
 |
 */
 
 Route::get('/', function () {
     return view('login');
 });
-
-Route::get('/frontOffice', function () {
-    return view('loginFO');
-});
-
-Route::get('/login', [LoginController::class,"loginAdmin"])->name("loginAdmin");
-
-Route::get('/home',[InfoController::class,"home"])->name(("home"));
-
-Route::get('/listeNonConfirm', [InfoController::class,"listeNonConfirm"])->name("listeNonConfirm");
-
-Route::get('/showToUdpate/{id}', [InfoController::class,"showToUpdate"])->name("showToUpdate");
-
-Route::get('/publier/{id}', [InfoController::class,"publier"])->name("publier");
-
-Route::get('/search',[InfoController::class,"search"])->name("search");
-
-Route::get('/loginFO', [FOLoginController::class,"loginAdmin"])->name("loginAdmin");
-
-Route::get('/homeFO',[FOInfoController::class,"home"])->name(("home"));
-
-Route::get('/addInfoFO', [FOInfoController::class,"insertForm"])->name("insertForm");
-
-Route::post('/createInfoFO', [FOInfoController::class,"insert"])->name("insert");
-
-Route::get('/searchFO',[FOInfoController::class,"search"])->name("search");
+Route::get('/registration',[AuthController::class, 'registration'])->name('registration');
+Route::get('/login',[AuthController::class, 'login'])->name('login');
+Route::get('/accueil',[AuthController::class, 'accueil'])->name('accueil');
+Route::post('/logAdmin',[AuthController::class, 'logAdmin'])->name('logAdmin');
+Route::post('/regAdmin',[AuthController::class, 'regAdmin'])->name('regAdmin');
+Route::post('/posterArticle',[ArticleController::class, 'posterArticle'])->name('posterArticle');
+Route::get('/infoDetail/{id}/{slug}',[ArticleController::class, 'infoDetail'])->name('infoDetail');
+Route::get('/logout',[AuthController::class, 'logout'])->name('logout');
+Route::get('/liste',[AuthController::class, 'liste'])->name('liste');
+Route::get('/poste',[AuthController::class, 'poste'])->name('poste');
