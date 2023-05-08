@@ -18,7 +18,7 @@
 
 <body>
     <nav class="navbar navbar-light navbar-expand-lg fixed-top" id="mainNav">
-        <div class="container"><a class="navbar-brand" href="liste.html">Ai News</a><button data-bs-toggle="collapse" data-bs-target="#navbarResponsive" class="navbar-toggler" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
+        <div class="container"><a class="navbar-brand" href="">Ai News</a><button data-bs-toggle="collapse" data-bs-target="#navbarResponsive" class="navbar-toggler" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto"></ul>
             </div>
@@ -27,7 +27,7 @@
             </ul>
         </div>
     </nav>
-    <section class="login-clean" style="background: url(&quot;assets/img/about-bg.jpg&quot;);">
+    <section class="login-clean">
         <form method="post" action="{{ route('logAdmin')}}">
             @csrf
             @if (Session::has('success'))
@@ -41,24 +41,14 @@
                 <p style="text-align: center;font-size: 35px;color: rgb(0,0,0);">Login</p>
             </div>
             <div class="mb-3"></div>
-            <div class="mb-3"><input class="form-control" type="email" name="email" placeholder="Email" value="test@gmail.com"></div>
+            <div class="mb-3"><input class="form-control" type="email" name="email" placeholder="Email" value="admin@gmail.com"></div>
             <div><span class="text-danger">@error('email'){{$message}}@enderror</span></div>
-            <div class="mb-3"><input class="form-control" type="password" name="password" placeholder="Password" value="123456789"></div>
+            <div class="mb-3"><input class="form-control" type="password" name="password" placeholder="Password" value="123456"></div>
             <div><span class="text-danger">@error('password'){{$message}}@enderror</span></div>
             <div class="mb-3"><button class="btn btn-primary d-block w-100" type="submit" style="background: rgb(0,0,0);">login</button></div><a class="forgot" href="registration">Not registered?</a>
         </form>
     </section>
-    <footer class="footer-basic">
-        <div class="social"><a href="#"><i class="icon ion-social-instagram"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-facebook"></i></a></div>
-        <ul class="list-inline">
-            <li class="list-inline-item"><a href="#">Home</a></li>
-            <li class="list-inline-item"><a href="#">Services</a></li>
-            <li class="list-inline-item"><a href="#">About</a></li>
-            <li class="list-inline-item"><a href="#">Terms</a></li>
-            <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
-        </ul>
-        <p class="copyright">Company Name © 2023</p>
-    </footer>
+    
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/clean-blog.js"></script>
 </body>

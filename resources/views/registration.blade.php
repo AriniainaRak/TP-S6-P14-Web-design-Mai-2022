@@ -27,7 +27,7 @@
             </ul>
         </div>
     </nav>
-    <section class="login-clean" style="background: url(&quot;assets/img/about-bg.jpg&quot;);">
+    <section class="login-clean">
         <form method="post" action="regAdmin">
             @csrf
             @if (Session::has('success'))
@@ -49,17 +49,7 @@
             <div class="mb-3"><button class="btn btn-primary d-block w-100" type="submit" style="background: rgb(0,0,0);">register</button></div><a class="forgot" href="login">Already registered?</a>
         </form>
     </section>
-    <footer class="footer-basic">
-        <div class="social"><a href="#"><i class="icon ion-social-instagram"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-facebook"></i></a></div>
-        <ul class="list-inline">
-            <li class="list-inline-item"><a href="#">Home</a></li>
-            <li class="list-inline-item"><a href="#">Services</a></li>
-            <li class="list-inline-item"><a href="#">About</a></li>
-            <li class="list-inline-item"><a href="#">Terms</a></li>
-            <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
-        </ul>
-        <p class="copyright">Company Name © 2023</p>
-    </footer>
+    
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/clean-blog.js"></script>
 </body>
