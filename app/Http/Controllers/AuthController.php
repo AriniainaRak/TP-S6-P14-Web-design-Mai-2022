@@ -64,13 +64,6 @@ class AuthController extends Controller
 
     public function accueil(){
         return view('liste',['listeArticle'=>Article::all()]);
-        // $data = array();
-        // if (Session::has('loginId')){
-        //     # code...
-        //     $data = User::where('id', '=', Session::get('loginId'))->first();
-        //     return view('liste', compact('data'),['listeArticle'=>Article::all()]);
-        // }
-        // return back();
     }
 
     public function liste(){
