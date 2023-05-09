@@ -26,6 +26,7 @@
             </div>
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item"><a class="nav-link" href="{{route('login')}}">Poster</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{route('accueil')}}">Home</a></li>
             </ul>
         </div>
     </nav>
