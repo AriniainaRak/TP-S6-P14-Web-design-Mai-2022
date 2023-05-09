@@ -55,8 +55,8 @@
     </article>
     @endforeach
     
-    <script src="{{asset('assets/bootstrap/js/bootstrap.min.js')}}"></script>
-    <script src="{{asset('assets/js/clean-blog.js')}}"></script>
+    <script src="https://hot-coil-production.up.railway.app/assets/bootstrap/js/bootstrap.min.js'"></script>
+    <script src="https://hot-coil-production.up.railway.app/assets/js/clean-blog.js'"></script>
 </body>
 
 </html>
