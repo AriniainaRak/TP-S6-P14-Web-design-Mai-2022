@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta name="description" content="liste">
     <meta name="robots" content="index, follow">
     <meta name="description" content="Toute les nouvelles allechante sur l'intelligence artificielle IA. Les nouvelles technologies utilisant l'intelligence artificielle IA">
     <title>Toute les nouvelles allechante sur l'intelligence artificielle IA</title>
