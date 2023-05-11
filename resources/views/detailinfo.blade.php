@@ -2,12 +2,12 @@
 <html lang="fr">
 
 <head>
+    @foreach ($detail as $details)
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <meta name="description" content="{{$details->Titre}}">
     <meta name="author" content="{{$details->Auteur}}">
     <meta name="robots" content="index, follow">
-    @foreach ($detail as $details)
     <meta name="description" content="{{$details->resume}}">
     <title>{{$details->Titre}}</title>
     <link rel="stylesheet" href="https://hot-coil-production.up.railway.app/assets/bootstrap/css/bootstrap.min.css">
